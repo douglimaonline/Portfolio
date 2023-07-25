@@ -6,7 +6,7 @@ KEY = config("STEAM_API_KEY")
 steam = Steam(KEY)
 
 
-class SteamSetUp:
+class SteamSet:
     def __init__(self):
         pass
 

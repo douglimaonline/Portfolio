@@ -1,6 +1,6 @@
 import random
-from steamAPI import SteamSetUp
-steam_set_up = SteamSetUp()
+from steamAPI import SteamSet
+steam = SteamSet()
 
 
 class Game_obj:
@@ -18,17 +18,11 @@ class Game_funcs:
         return rand_game
 
     def set_options_list(self):
-        chosen_game = self.pick_game(steam_set_up.set_game_list())
-        game2 = self.pick_game(steam_set_up.set_game_list())
-        game3 = self.pick_game(steam_set_up.set_game_list())
+        chosen_game = self.pick_game(steam.set_game_list())
+        game2 = Game_obj('game2', chosen_game.playtime+random.randint(300, 900))
+        game3 = Game_obj('game3', chosen_game.playtime-random.randint(0, 360))
+        if game3.playtime <= 0:
+            game3.playtime = random.randint(0, 60)
         game_list = [chosen_game, game2, game3]
-        if len(game_list) != len(set(game_list)):
-            self.set_options_list()
         return game_list
 
-
-# O random escolheu mesmo jogo para duas alternativas. ------ ok
-# O random escolheu mais de um jogo com menos de 1 hora ------ ok
-# O random escolheu mais de um jogo com a mesma duração ------ não sei resolver.
-
-# estudar conjuntos

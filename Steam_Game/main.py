@@ -1,5 +1,5 @@
 from functions_of_game import Game_funcs
-from steamAPI import SteamSetUp
+from steamAPI import SteamSet
 from math import floor
 import random
 import os
@@ -8,7 +8,7 @@ from art import logo, certo_misera, mamou
 os.system('cls')
 print(logo)
 game_funcs = Game_funcs()
-steam = SteamSetUp()
+steam = SteamSet()
 
 # setting steam user/id
 steam.get_steam()
@@ -44,8 +44,8 @@ while is_game_on:
 # checking answer and updating score
     def set_answer():
         answer = input('Resposta: ')
-        if answer.lower() == 'a' or answer == 'b' or answer == 'c':
-            if answer == correct_answer.lower():
+        if answer.lower() == 'a' or answer.lower() == 'b' or answer.lower() == 'c':
+            if answer.lower() == correct_answer.lower():
                 global score
                 score += 1
                 print(certo_misera)
@@ -65,14 +65,20 @@ while is_game_on:
     set_answer()
 
 # correções:
-# - opções repitidas ok
-# - dois jogos com o mesmo tempo de jogo (fazer um if com qntd de carct e tipo de string)
-# corrigir o lower da answer
+# opções repitidas ok
+# O random escolheu mesmo jogo para duas alternativas. ------ ok
+# O random escolheu mais de um jogo com menos de 1 hora ------ ok
+# O random escolheu mais de um jogo com a mesma duração ------ ok
+# corrigir o lower da answer ------ ok
+# corrigir jogos repitidos
 # - login
 # - interface tkinter
+# - se for a msm qtd de hr, buscar outro jogo
 
-# Vipe
+# Viper
 # --- pontuação all time
 # --- streak (o histórico)
 # - jogos repitidas
-# - se for a msm qtd de hr, buscar outro jogo
+# MAMADA GENERALIZADA
+
+# estudar conjuntos
