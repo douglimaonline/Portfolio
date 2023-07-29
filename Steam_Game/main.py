@@ -76,6 +76,9 @@ while is_game_on:
 # O random escolheu mais de um jogo com a mesma duração ------ ok
 # corrigir o lower da answer ------ ok
 # - login error ------ ok
+
+# Criar arquivos executáveis (criar ambiente virutal)
+#  Perguntar se quiser jogar novamanente
 # corrigir jogos repitidos
 # - interface tkinter
 # - se for a msm qtd de hr, buscar outro jogo
