@@ -25,4 +25,3 @@ class Game_funcs:
             game3.playtime = random.randint(0, 60)
         game_list = [chosen_game, game2, game3]
         return game_list
-

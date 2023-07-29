@@ -7,6 +7,11 @@ import time
 from art import logo, certo_misera, mamou
 os.system('cls')
 print(logo)
+print('Bem vindo ao STEAM GAME THE GAME!!!\n'
+      'Acerte o tempo de gameplay dos seu jogos da Steam e veja quantos pontos consegue fazer!\n'
+      'Este é um jogo em versão de testes, portanto seu feedback será muito bem vindo.')
+
+print('\nPara jogar, vá até o seu perfil steam pegue a informação após "steamcommunity.com/id/" ou "steamcommunity.com/profiles/".')
 game_funcs = Game_funcs()
 steam = SteamSet()
 
@@ -25,7 +30,7 @@ while is_game_on:
 
     os.system('cls')
     print(logo)
-    print(f'Você tem {chances} chances.')
+    print(f'Você pode errar até {chances} vez.')
     print(f"Quantas horas de jogo você tem no {chosen_game.name} (A, B ou C?) ")
 
     # creating alternatives, using list of options
@@ -53,12 +58,12 @@ while is_game_on:
             else:
                 global chances
                 print(mamou)
-                time.sleep(1)
+                time.sleep(1.5)
                 chances -= 1
                 if chances == 0:
                     global is_game_on
                     is_game_on = False
-                    print(f'Você fez {score} pontos')
+                    print(f'Você fez {score} pontos.')
         else:
             print('Invalid Entry')
             set_answer()
@@ -70,8 +75,8 @@ while is_game_on:
 # O random escolheu mais de um jogo com menos de 1 hora ------ ok
 # O random escolheu mais de um jogo com a mesma duração ------ ok
 # corrigir o lower da answer ------ ok
+# - login error ------ ok
 # corrigir jogos repitidos
-# - login
 # - interface tkinter
 # - se for a msm qtd de hr, buscar outro jogo
 
@@ -79,6 +84,7 @@ while is_game_on:
 # --- pontuação all time
 # --- streak (o histórico)
 # - jogos repitidas
+
 # MAMADA GENERALIZADA
 
 # estudar conjuntos
