@@ -1,6 +1,7 @@
 from turtle import Screen
 from game import Paddle, Ball
 from scoreboard import ScoreBoard
+import time
 import random
 screen = Screen()  # (y=400, x=300)
 screen.bgcolor('black')
@@ -35,20 +36,35 @@ screen.onkey(fun=paddle2.movedown, key='s')
 screen.tracer(1)   # screen on
 
 # starting game
-is_game_on = True
-while is_game_on:
-    if ball.ycor() > 385 or ball.ycor() < -380:
-        ball.setheading(ball.heading()*-1)
-        ball.fast()
-    if ball.xcor() > 430 and ball.distance(paddle1) < 100 or ball.xcor() < -430 and ball.distance(paddle2) < 100:
-        ball.setheading(180-ball.heading())
-        ball.fast()
-    elif ball.xcor() > 440 or ball.xcor() < -440:
-        if ball.distance(paddle1) < ball.distance(paddle2):
-            scoreboard2.refresh_score()
-        else:
-            scoreboard1.refresh_score()
-        is_game_on = False
-    ball.move()
+
+def set_game_start():
+    is_game_on = True
+    while is_game_on:
+        if ball.ycor() > 385 or ball.ycor() < -380:
+            ball.setheading(ball.heading()*-1)
+            ball.fast()
+        if ball.xcor() > 430 and ball.distance(paddle1) < 100 or ball.xcor() < -430 and ball.distance(paddle2) < 100:
+            ball.setheading(180-ball.heading())
+            ball.fast()
+        elif ball.xcor() > 440 or ball.xcor() < -440:
+            if ball.distance(paddle1) < ball.distance(paddle2):
+                scoreboard2.refresh_score()
+                ball.goto(0, 0)
+                ball.velocit = 10
+                time.sleep(1)
+                ball.setheading(random.choice([45, 135, 225, 315]))
+                set_game_start()
+            else:
+                scoreboard1.refresh_score()
+            is_game_on = False
+            ball.goto(0, 0)
+            ball.velocit = 10
+            time.sleep(1)
+            ball.setheading(random.choice([45, 135, 225, 315]))
+            set_game_start()
+        ball.move()
+
+
+set_game_start()
 
 screen.exitonclick()
