@@ -12,7 +12,7 @@ turtle.shape(image)
 data = pd.read_excel("brazilian_states.xlsx")
 guessed_list = []
 
-while len(guessed_list) < 1:
+while len(guessed_list) < 27:
     answer = screen.textinput(title=f"Estados ({len(guessed_list)}/27)", prompt="Escreva um Estado do Brasil:")
     chosen = data[data.name == answer.lower()]
     try:
