@@ -3,9 +3,8 @@ from turtle import Screen, Turtle
 import pandas as pd
 
 screen = Screen()
-screen.setup(width=1200, height=1057)
 screen.title('Estados do Brasil')
-image = "Brazil_Labelled_Map.gif"
+image = "Brazil_Labelled_Map _resized.gif"
 screen.addshape(image)
 turtle.shape(image)
 
@@ -57,4 +56,4 @@ while x < 1000:
     x = x + 1
     c = c + 0.1
 
-screen.exitonclick()
+turtle.mainloop()

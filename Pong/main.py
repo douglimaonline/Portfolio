@@ -3,7 +3,8 @@ from game import Paddle, Ball
 from scoreboard import ScoreBoard
 import time
 import random
-screen = Screen()  # (y=400, x=300)
+screen = Screen()
+screen.screensize(300, 400)
 screen.bgcolor('black')
 screen.listen()
 screen.tracer(0)  # screen off
