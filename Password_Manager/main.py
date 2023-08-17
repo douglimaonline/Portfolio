@@ -1,5 +1,7 @@
+import string
 from tkinter import *
 from random import randint, choice, shuffle
+from tkinter import messagebox
 import pyperclip
 
 
@@ -23,9 +25,11 @@ def generate_password():
         password_numbers = [choice(numbers) for char in range(randint(6, 8))]
     else:
         password_numbers = []
-
     if var_caract.get() == 1:
-        password_symbols = [choice(symbols) for char in range(randint(4, 6))]
+        try:
+            password_symbols = [choice(symbols) for char in range(randint(4, 6))]
+        except IndexError:
+            messagebox.showinfo(title=f"Erro", message="Campo de caracteres especiais vazio.")
     else:
         password_symbols = []
 
@@ -39,11 +43,15 @@ def generate_password():
 def copy_password():
     pyperclip.copy(label_password.cget("text"))
 
+# ---------------------------- SPECIAL CHARACTERS VALIDATION ------------------------------- #
+# def special_char_validation():
+#     print(var_charact_entry)
+
 # ---------------------------- UI SETUP ------------------------------- #
 
 
 window = Tk()
-window.title("Password Manager")
+window.title("Password Generator")
 window.config(pady=20)
 window.minsize(width=400, height=380)
 window.maxsize(width=400, height=380)
@@ -56,7 +64,6 @@ padlock = PhotoImage(file="logo.png")
 canvas.create_image(100, 100, image=padlock)
 canvas.place(x=100, y=12)
 
-
 #  Labels
 label_password = Label(text=";7%lP[Ezm7Eu2ltN~x4SD", padx=15, font=("arial", 17, "normal"))
 label_password.place(x=12, y=210)
@@ -68,11 +75,10 @@ copy_password.place(x=334, y=214)
 restart_password = Button(text="Gerar", command=generate_password)
 restart_password.place(x=338, y=244)
 
-
 # options
 var_total_char = IntVar()
-var_total_char.set(20)
-total_char = Spinbox(from_=8, to=20, width=3, textvariable=var_total_char)
+var_total_char.set(16)
+total_char = Spinbox(from_=6, to=20, width=3, textvariable=var_total_char)
 total_char.place(x=30, y=264)
 password_lenght = Label(text="Comprimento da Senha")
 password_lenght.place(x=65, y=262)
@@ -92,7 +98,8 @@ charact_button = Checkbutton(variable=var_caract)
 charact_button.select()
 charact_button.place(x=144, y=294)
 
-charact_entry = Entry(width=30)
+var_charact_entry = StringVar()
+charact_entry = Entry(width=30, validate="focusout")
 charact_entry.insert(0, "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~")
 charact_entry.place(x=170, y=297)
 

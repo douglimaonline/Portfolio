@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Password_Manager.iml" filepath="$PROJECT_DIR$/.idea/Password_Manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../Python/password-manager-start/.idea/password-manager-start.iml" filepath="$PROJECT_DIR$/../../Python/password-manager-start/.idea/password-manager-start.iml" />
     </modules>
   </component>
 </project>
