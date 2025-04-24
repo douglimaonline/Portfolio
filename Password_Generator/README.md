@@ -15,8 +15,8 @@ This is a simple Python project that uses the **`pyperclip`** library for clipbo
 3. Clone the repository and navigate for your repository:
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/douglimaonline/Portfolio.git
+cd Pomodoro-Timer
 ```
 
 4. Install the dependences:
