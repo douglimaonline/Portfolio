@@ -16,7 +16,7 @@ This is a simple Python project that uses the **`pyperclip`** library for clipbo
 
 ```bash
 git clone https://github.com/douglimaonline/Portfolio.git
-cd Pomodoro-Timer
+cd Password_Generator
 ```
 
 4. Install the dependences:
