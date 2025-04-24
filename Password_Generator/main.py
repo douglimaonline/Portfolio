@@ -100,7 +100,7 @@ charact_button.place(x=144, y=294)
 
 var_charact_entry = StringVar()
 charact_entry = Entry(width=30, validate="focusout")
-charact_entry.insert(0, "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~")
+charact_entry.insert(0, "!#$%&'()*+,-./:;<=>?@[\\]^_`{|}~")
 charact_entry.place(x=170, y=297)
 
 window.mainloop()
