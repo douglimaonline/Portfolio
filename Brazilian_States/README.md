@@ -4,7 +4,7 @@ This is a simple Python project that uses the **`openpyxl`** library for Excel f
 
 ## 📦 Requirements
 
-- Python 3.1 or higher
+- Python 3.6 or higher
 - `openpyxl` (installed via `pip`)
 - `tkinter` (already included with standard Python)
 
@@ -35,7 +35,7 @@ python main.py
 ## 🛠 Features
 
 - Graphical interface with `tkinter`
-- Copy and paste text from the clipboard using `pyperclip`
+- Manipulation and reading of Excel files using `openpyxl`
 - User-friendly interface for basic text interactions
 
 ---
